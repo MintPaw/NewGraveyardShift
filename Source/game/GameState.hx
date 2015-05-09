@@ -18,6 +18,13 @@ class GameState extends FlxState
 
 		{ // Setup players
 			_playerGroup = new FlxTypedSpriteGroup<Player>();
+
+			var p:Player = new Player();
+			_playerGroup.add(p);
+		}
+
+		{ // Add groups
+			add(_playerGroup);
 		}
 	}
 
