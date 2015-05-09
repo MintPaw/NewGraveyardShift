@@ -33,11 +33,11 @@ class Player extends FlxSprite
 		left = right = up = down = shoot = false;
 
 		{ // Update input
-			if (FlxG.keys.pressed.LEFT) left = true;
-			if (FlxG.keys.pressed.RIGHT) right = true;
-			if (FlxG.keys.pressed.UP) up = true;
-			if (FlxG.keys.pressed.DOWN) down = true;
-			if (FlxG.keys.pressed.Z) shoot = true;
+			if (FlxG.keys.pressed.W) up = true;
+			if (FlxG.keys.pressed.S) down = true;
+			if (FlxG.keys.pressed.A) left = true;
+			if (FlxG.keys.pressed.D) right = true;
+			if (FlxG.mouse.pressed) shoot = true;
 			aim = FlxAngle.angleBetweenMouse(this);
 		}
 
