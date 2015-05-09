@@ -14,6 +14,9 @@ class MainState extends FlxState
 
 	override public function create():Void
 	{
+		FlxG.fixedTimestep = false;
+		FlxG.stage.frameRate = 120;
+
 		FlxG.switchState(new MenuState());
 	}
 }
