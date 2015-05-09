@@ -2,6 +2,7 @@ package game;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.math.FlxAngle;
 import flixel.math.FlxPoint;
 
 class Player extends FlxSprite
@@ -27,13 +28,17 @@ class Player extends FlxSprite
 		var right:Bool;
 		var up:Bool;
 		var down:Bool;
-		left = right = up = down = false;
+		var shoot:Bool;
+		var aim:Float = 0;
+		left = right = up = down = shoot = false;
 
 		{ // Update input
 			if (FlxG.keys.pressed.LEFT) left = true;
 			if (FlxG.keys.pressed.RIGHT) right = true;
 			if (FlxG.keys.pressed.UP) up = true;
 			if (FlxG.keys.pressed.DOWN) down = true;
+			if (FlxG.keys.pressed.Z) shoot = true;
+			aim = FlxAngle.angleBetweenMouse(this);
 		}
 
 		{ // Update movement
