@@ -1,9 +1,11 @@
 package game;
 
 import flixel.FlxState;
+import flixel.group.FlxSpriteGroup;
 
 class GameState extends FlxState
 {
+	private var _playerGroup:FlxTypedSpriteGroup<Player>;
 
 	public function new()
 	{
@@ -14,7 +16,9 @@ class GameState extends FlxState
 	{
 		super.create();
 
-		trace("Game has started");
+		{ // Setup players
+			_playerGroup = new FlxTypedSpriteGroup<Player>();
+		}
 	}
 
 	override public function update(elapsed:Float):Void
