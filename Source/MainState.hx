@@ -1,7 +1,7 @@
 package;
 
-import flixel.FlxState;
 import flixel.FlxG;
+import flixel.FlxState;
 import menu.MenuState;
 
 class MainState extends FlxState
