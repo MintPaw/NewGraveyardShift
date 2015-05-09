@@ -2,15 +2,21 @@ package game;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.math.FlxPoint;
 
 class Player extends FlxSprite
 {
+	private var _speed:FlxPoint;
 
 	public function new()
 	{
 		super();
 
 		makeGraphic(30, 60, 0xFF0000FF);
+
+		maxVelocity.set(150, 150);
+		drag.set(maxVelocity.x * 8, maxVelocity.y * 8);
+		_speed = new FlxPoint(maxVelocity.x * 10, maxVelocity.y * 10);
 	}
 
 	override public function update(elapsed:Float):Void
@@ -26,8 +32,6 @@ class Player extends FlxSprite
 			if (FlxG.keys.pressed.RIGHT) right = true;
 			if (FlxG.keys.pressed.UP) up = true;
 			if (FlxG.keys.pressed.DOWN) down = true;
-
-			trace(left, right, up, down);
 		}
 
 		super.update(elapsed);
