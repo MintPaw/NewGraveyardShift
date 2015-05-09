@@ -34,6 +34,14 @@ class Player extends FlxSprite
 			if (FlxG.keys.pressed.DOWN) down = true;
 		}
 
+		{ // Update movement
+			acceleration.set();
+			if (left) acceleration.x -= _speed.x;
+			if (right) acceleration.x += _speed.x;
+			if (up) acceleration.y -= _speed.y;
+			if (down) acceleration.y += _speed.y;
+		}
+
 		super.update(elapsed);
 	}
 }
