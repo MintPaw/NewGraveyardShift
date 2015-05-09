@@ -1,9 +1,11 @@
 package menu;
 
 import flixel.FlxState;
+import flixel.ui.FlxButton;
 
 class MenuState extends FlxState
 {
+	var _testButton:FlxButton;
 
 	public function new()
 	{
@@ -12,6 +14,16 @@ class MenuState extends FlxState
 
 	override public function create():Void
 	{
-		trace("Menu state works");
+		super.create();
+
+		_testButton = new FlxButton(0, 0, "Start test level");
+		add(_testButton);
+	}
+
+	override public function update(elapsed:Float):Void
+	{
+		if (_testButton.justPressed) trace("Button pressed");
+
+		super.update(elapsed);
 	}
 }

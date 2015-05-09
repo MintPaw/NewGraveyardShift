@@ -14,6 +14,8 @@ class MainState extends FlxState
 
 	override public function create():Void
 	{
+		super.create();
+
 		FlxG.fixedTimestep = false;
 		FlxG.stage.frameRate = 120;
 
