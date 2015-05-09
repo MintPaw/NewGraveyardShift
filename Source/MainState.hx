@@ -1,6 +1,8 @@
 package;
 
 import flixel.FlxState;
+import flixel.FlxG;
+import menu.MenuState;
 
 class MainState extends FlxState
 {
@@ -12,6 +14,6 @@ class MainState extends FlxState
 
 	override public function create():Void
 	{
-		trace("Game is working");
+		FlxG.switchState(new MenuState());
 	}
 }
