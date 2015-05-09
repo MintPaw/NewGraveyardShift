@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
-	
-	<meta title="NewGraveyardShift" package="com.sample.newgraveyardshift" version="1.0.0" company="Company Name" />
-	<app main="Main" path="Export" file="NewGraveyardShift" />
+	<window width="1920" height="1080" />
+
+	<meta title="GraveyardShift" package="com.mintpaw.newgraveyardshift" version="1.0.0" company="Team Omni" />
+	<app main="Main" path="Export" file="GraveyardShift" />
 	
 	<source path="Source" />
 	
 	<haxelib name="openfl" />
+	<haxelib name="flixel" />
 	
 	<assets path="Assets" rename="assets" exclude="openfl.svg" />
 	<icon path="Assets/openfl.svg" />
