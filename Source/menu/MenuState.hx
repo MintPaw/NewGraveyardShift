@@ -1,7 +1,9 @@
 package menu;
 
+import flixel.FlxG;
 import flixel.FlxState;
 import flixel.ui.FlxButton;
+import game.GameState;
 
 class MenuState extends FlxState
 {
@@ -22,7 +24,7 @@ class MenuState extends FlxState
 
 	override public function update(elapsed:Float):Void
 	{
-		if (_testButton.justPressed) trace("Button pressed");
+		if (_testButton.justPressed) FlxG.switchState(new GameState());
 
 		super.update(elapsed);
 	}
