@@ -10,8 +10,10 @@ import game.Structs.GunDef;
 class Player extends FlxSprite
 {
 	public var currentGun:GunDef;
+	public var aim:Float;
 
 	private var _speed:FlxPoint;
+	private var _fireDelay:Float;
 
 	public function new()
 	{
@@ -33,7 +35,6 @@ class Player extends FlxSprite
 		var up:Bool;
 		var down:Bool;
 		var shoot:Bool;
-		var aim:Float = 0;
 		left = right = up = down = shoot = false;
 
 		{ // Update input
@@ -51,6 +52,15 @@ class Player extends FlxSprite
 			if (right) acceleration.x += _speed.x;
 			if (up) acceleration.y -= _speed.y;
 			if (down) acceleration.y += _speed.y;
+		}
+
+		{ // Update shooting
+			_fireDelay -= elapsed;
+			if (shoot && _fireDelay <= 0)
+			{
+				_fireDelay = 1 / currentGun.fireRate;
+				for (i in 0...currentGun.bullets) Globals.shootCallback(this);
+			}
 		}
 
 		super.update(elapsed);
