@@ -2,6 +2,7 @@ package game;
 
 import flixel.FlxState;
 import flixel.group.FlxSpriteGroup;
+import game.Structs.GunDef;
 
 class GameState extends FlxState
 {
@@ -15,6 +16,16 @@ class GameState extends FlxState
 	override public function create():Void
 	{
 		super.create();
+
+		{ // Setup guns (temp)
+			Structs.guns.push({
+				name: "Pistol", 
+				projectile: true,
+				spread: 4,
+				bullets: 1,
+				fireRate: 2
+				});
+		}
 
 		{ // Setup players
 			_playerGroup = new FlxTypedSpriteGroup<Player>();

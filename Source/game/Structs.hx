@@ -2,6 +2,7 @@ package game;
 
 class Structs
 {
+	public static var guns:Array<GunDef> = [];
 
 }
 
