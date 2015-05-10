@@ -4,9 +4,13 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.math.FlxAngle;
 import flixel.math.FlxPoint;
+// TODO(jeru): You can import this better
+import game.Structs.GunDef;
 
 class Player extends FlxSprite
 {
+	public var currentGun:GunDef;
+
 	private var _speed:FlxPoint;
 
 	public function new()
@@ -50,5 +54,13 @@ class Player extends FlxSprite
 		}
 
 		super.update(elapsed);
+	}
+
+	public function changeWeapon(gunName:String):Void
+	{
+		for (i in Structs.guns)
+		{
+			if (i.name == gunName) currentGun = i;
+		}
 	}
 }

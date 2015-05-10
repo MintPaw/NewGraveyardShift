@@ -31,6 +31,7 @@ class GameState extends FlxState
 			_playerGroup = new FlxTypedSpriteGroup<Player>();
 
 			var p:Player = new Player();
+			p.changeWeapon("Pistol");
 			_playerGroup.add(p);
 		}
 
